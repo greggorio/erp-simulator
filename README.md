@@ -4,6 +4,20 @@
 
 Aplicação web independente que fornece interface visual para demonstrar e validar o funcionamento do módulo de reconhecimento facial `face-recognition`, sem que o usuário precise manipular arquivos JSON manualmente.
 
+## Instalação
+
+### Clonar o Repositório
+
+```bash
+# SSH
+git clone git@github.com:greggorio/erp-simulator.git
+cd erp-simulator
+
+# HTTPS
+git clone https://github.com/greggorio/erp-simulator.git
+cd erp-simulator
+```
+
 ## Arquitetura
 
 | Item | Detalhe |
@@ -104,13 +118,16 @@ Aplicação web independente que fornece interface visual para demonstrar e vali
 
 ### Desenvolvimento (Linux)
 ```bash
-cd erp-interface
+cd erp-simulator
 docker compose up --build
 ```
 Acesse: `http://localhost:8501`
 
 ### Produção (Windows)
-1. Copie o projeto para `c:\erp-simulator`
+1. Clone o projeto para `c:\erp-simulator`:
+   ```cmd
+   git clone git@github.com:greggorio/erp-simulator.git c:\erp-simulator
+   ```
 2. Crie arquivo `.env`:
    ```
    ERP_PORT=8501
