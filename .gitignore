@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+
+# SQLite database (generated at runtime)
+*.db
+*.db-journal
+
+# Data directories
+data/
+
+# OS
+.DS_Store
+Thumbs.db

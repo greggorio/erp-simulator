@@ -1,0 +1,19 @@
+services:
+  erp-interface:
+    build: .
+    ports:
+      - "${ERP_PORT:-8501}:8501"
+    volumes:
+      - ${ERP_INTEGRATION_PATH:-./data/erp-integration}:/app/data/erp-integration
+      - erp-db:/app/data
+    environment:
+      - ERP_ENTRADA_DIR=/app/data/erp-integration/entrada
+      - ERP_SAIDA_DIR=/app/data/erp-integration/saida
+      - ERP_DB_PATH=/app/data/erp.db
+      - FACIAL_URL=${FACIAL_URL:-http://host.docker.internal:8080}
+      - POLL_TIMEOUT_S=${POLL_TIMEOUT_S:-300}
+      - POLL_INTERVAL_S=${POLL_INTERVAL_S:-2}
+    restart: unless-stopped
+
+volumes:
+  erp-db:
